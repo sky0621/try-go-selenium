@@ -24,4 +24,11 @@ func main() {
 	if err != nil {
 		log.Fatalf("page screenshot failed %#v", err)
 	}
+
+	page.FindByLink("もっと詳しく").Click()
+	log.Info(page.Title())
+	err = page.Screenshot("./chrome_qiita2.jpg")
+	if err != nil {
+		log.Fatalf("page screenshot2 failed %#v", err)
+	}
 }
